@@ -1,4 +1,3 @@
-import 'package:dynamic_color/dynamic_color.dart';
 import 'package:flutter/material.dart';
 import 'app/list.dart';
 import 'app/seasonal.dart';
@@ -23,22 +22,20 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return DynamicColorBuilder(builder: (lightColorScheme, darkColorScheme) {
-      return MaterialApp(
-        title: 'Tinasha',
-        theme: ThemeData(
-          colorScheme: /* lightColorScheme ??*/ _defaultLightColorScheme,
-          useMaterial3: true,
-        ),
-        darkTheme: ThemeData(
-          colorScheme: /* darkColorScheme ??*/ _defaultDarkColorScheme,
-          useMaterial3: true,
-        ),
-        home: const MyHomePage(),
-        themeMode: ThemeMode.dark,
-        debugShowCheckedModeBanner: false,
-      );
-    });
+    return MaterialApp(
+      title: 'Tinasha',
+      theme: ThemeData(
+        colorScheme: _defaultLightColorScheme,
+        useMaterial3: true,
+      ),
+      darkTheme: ThemeData(
+        colorScheme: _defaultDarkColorScheme,
+        useMaterial3: true,
+      ),
+      home: const MyHomePage(),
+      themeMode: ThemeMode.dark,
+      debugShowCheckedModeBanner: false,
+    );
   }
 }
 
