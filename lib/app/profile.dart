@@ -14,21 +14,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Column(
-          children: [
-            Switch(
-              // This bool value toggles the switch.
-              value: light,
-              onChanged: (bool value) {
-                // This is called when the user toggles the switch.
-                setState(() {
-                  light = value;
-                });
-              },
-            )
-          ],
-        ),
-      ),
+          child: Switch(
+        // This bool value toggles the switch.
+        value: light,
+        onChanged: (bool value) {
+          // This is called when the user toggles the switch.
+          setState(() {
+            light = value;
+          });
+        },
+      )),
     );
   }
 }

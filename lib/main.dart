@@ -1,52 +1,65 @@
 import 'package:flutter/material.dart';
+import 'package:tinasha_v2/app/search.dart';
 import 'app/list.dart';
 import 'app/seasonal.dart';
 import 'app/profile.dart';
+import 'package:go_router/go_router.dart';
 
 void main() async {
   runApp(const MyApp());
 }
 
-class MyApp extends StatefulWidget {
+final GoRouter _router = GoRouter(
+  routes: <RouteBase>[
+    GoRoute(
+      path: '/',
+      builder: (BuildContext context, GoRouterState state) {
+        return const HomeScreen();
+      },
+      routes: <RouteBase>[
+        GoRoute(
+          path: 'details',
+          builder: (BuildContext context, GoRouterState state) {
+            return const DetailsScreen();
+          },
+        ),
+      ],
+    ),
+    GoRoute(path: "/search",
+    builder: (context, state) => SearchScreen(),)
+  ],
+);
+
+class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  final _defaultLightColorScheme = ColorScheme.fromSeed(seedColor: Colors.blue);
-
-  final _defaultDarkColorScheme =
-      ColorScheme.fromSeed(seedColor: Colors.blue, brightness: Brightness.dark);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Tinasha',
       theme: ThemeData(
-        colorScheme: _defaultLightColorScheme,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
       ),
       darkTheme: ThemeData(
-        colorScheme: _defaultDarkColorScheme,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue, brightness: Brightness.dark),
         useMaterial3: true,
       ),
-      home: const MyHomePage(),
+      home: const HomeScreen(),
       themeMode: ThemeMode.dark,
       debugShowCheckedModeBanner: false,
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _HomeScreenState extends State<HomeScreen> {
   int _currentPageIndex = 1;
 
   @override
