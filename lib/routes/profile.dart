@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';
 import 'package:simple_icons/simple_icons.dart';
 import 'package:streaming_shared_preferences/streaming_shared_preferences.dart';
@@ -69,6 +70,7 @@ class _ProfileRouteState extends State<ProfileRoute> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
+        padding: EdgeInsets.only(top: MediaQuery.of(context).viewPadding.top),
         child: Column(
           children: <Widget>[
             Padding(
