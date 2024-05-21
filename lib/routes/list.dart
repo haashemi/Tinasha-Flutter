@@ -2,6 +2,41 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:tinasha_v2/widgets/anime_list.dart';
 
+class TemporarilyList extends StatelessWidget {
+  const TemporarilyList(this.scrollController, {super.key});
+
+  final ScrollController scrollController;
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      padding: const EdgeInsets.all(10),
+      controller: scrollController,
+      child: const Column(
+        children: [
+          AnimeList(),
+          Gap(2),
+          AnimeList(),
+          Gap(2),
+          AnimeList(),
+          Gap(2),
+          AnimeList(),
+          Gap(2),
+          AnimeList(),
+          Gap(2),
+          AnimeList(),
+          Gap(2),
+          AnimeList(),
+          Gap(2),
+          AnimeList(),
+          Gap(2),
+          AnimeList(),
+        ],
+      ),
+    );
+  }
+}
+
 class ListRoute extends StatefulWidget {
   const ListRoute({super.key});
 
@@ -35,69 +70,12 @@ class _ListRouteState extends State<ListRoute> {
           ),
           body: TabBarView(
             children: <Widget>[
-              Scrollbar(
-                controller: watchingScrollController,
-                child: ListView.separated(
-                  itemCount: 5,
-                  separatorBuilder: (context, index) => const Gap(2),
-                  itemBuilder: (c, i) => const AnimeList(),
-                  controller: watchingScrollController,
-                  // padding: const EdgeInsets.all(15),
-                ),
-              ),
-              Scrollbar(
-                controller: watchingScrollController,
-                child: ListView.separated(
-                  itemCount: 5,
-                  separatorBuilder: (context, index) => const Gap(2),
-                  itemBuilder: (c, i) => const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 8),
-                    child: AnimeList(),
-                  ),
-                  controller: watchingScrollController,
-                  // padding: const EdgeInsets.all(15),
-                ),
-              ),
-              Scrollbar(
-                controller: watchingScrollController,
-                child: ListView.separated(
-                  itemCount: 5,
-                  separatorBuilder: (context, index) => const Gap(2),
-                  itemBuilder: (c, i) => const AnimeList(),
-                  controller: watchingScrollController,
-                  // padding: const EdgeInsets.all(15),
-                ),
-              ),
-              Scrollbar(
-                controller: watchingScrollController,
-                child: ListView.separated(
-                  itemCount: 5,
-                  separatorBuilder: (context, index) => const Gap(2),
-                  itemBuilder: (c, i) => const AnimeList(),
-                  controller: watchingScrollController,
-                  // padding: const EdgeInsets.all(15),
-                ),
-              ),
-              Scrollbar(
-                controller: watchingScrollController,
-                child: ListView.separated(
-                  itemCount: 5,
-                  separatorBuilder: (context, index) => const Gap(2),
-                  itemBuilder: (c, i) => const AnimeList(),
-                  controller: watchingScrollController,
-                  // padding: const EdgeInsets.all(15),
-                ),
-              ),
-              Scrollbar(
-                controller: watchingScrollController,
-                child: ListView.separated(
-                  itemCount: 5,
-                  separatorBuilder: (context, index) => const Gap(2),
-                  itemBuilder: (c, i) => const AnimeList(),
-                  controller: watchingScrollController,
-                  // padding: const EdgeInsets.all(15),
-                ),
-              ),
+              TemporarilyList(watchingScrollController),
+              TemporarilyList(watchingScrollController),
+              TemporarilyList(watchingScrollController),
+              TemporarilyList(watchingScrollController),
+              TemporarilyList(watchingScrollController),
+              TemporarilyList(watchingScrollController),
             ],
           ),
         ),

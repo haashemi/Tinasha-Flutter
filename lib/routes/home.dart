@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 import 'package:tinasha_v2/widgets/anime_list.dart';
 
@@ -30,9 +31,25 @@ class _HomeRouteState extends State<HomeRoute> {
         ),
       ),
       body: const SingleChildScrollView(
+        padding: EdgeInsets.fromLTRB(10, 2, 10, 10),
         child: Column(
           children: <Widget>[
             AnimeList(),
+            Gap(2),
+            AnimeList(),
+            Gap(2),
+            AnimeList(),
+            Gap(2),
+            AnimeList(),
+            Gap(2),
+            AnimeList(),
+            Gap(2),
+            AnimeList(),
+            Gap(2),
+            AnimeList(),
+            Gap(2),
+            AnimeList(),
+            Gap(2),
             AnimeList(),
           ],
         ),

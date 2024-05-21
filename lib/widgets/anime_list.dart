@@ -9,12 +9,12 @@ class AnimeList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
+    return Card.filled(
       clipBehavior: Clip.antiAliasWithSaveLayer,
       child: InkWell(
         onTap: () {},
         child: SizedBox(
-          height: 150,
+          height: 140,
           child: Row(
             children: <Widget>[
               ClipRRect(
