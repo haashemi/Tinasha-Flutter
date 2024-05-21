@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:tinasha_v2/routes/routes.dart';
 import 'package:tinasha_v2/widgets/home_shell.dart';
@@ -8,30 +9,46 @@ final GoRouter router = GoRouter(
   debugLogDiagnostics: true,
   routes: <RouteBase>[
     ShellRoute(
-      builder: (context, state, child) =>
-          HomeShell(child: child),
+      builder: (context, state, child) => HomeShell(child: child),
       routes: <RouteBase>[
         GoRoute(
           path: '/',
-          pageBuilder: (context, state) =>
-              const NoTransitionPage(child: HomeRoute()),
+          pageBuilder: (context, state) => CustomTransitionPage(
+            key: state.pageKey,
+            child: const HomeRoute(),
+            transitionsBuilder:
+                (context, animation, secondaryAnimation, child) =>
+                    FadeTransition(opacity: animation, child: child),
+            opaque: false,
+          ),
         ),
         GoRoute(
           path: '/list',
-          pageBuilder: (context, state) =>
-              const NoTransitionPage(child: ListRoute()),
+          pageBuilder: (context, state) => CustomTransitionPage(
+            key: state.pageKey,
+            child: const ListRoute(),
+            transitionsBuilder:
+                (context, animation, secondaryAnimation, child) =>
+                    FadeTransition(opacity: animation, child: child),
+            opaque: false,
+          ),
         ),
         GoRoute(
           path: '/profile',
-          pageBuilder: (context, state) =>
-              const NoTransitionPage(child: ProfileRoute()),
+          pageBuilder: (context, state) => CustomTransitionPage(
+            key: state.pageKey,
+            child: const ProfileRoute(),
+            transitionsBuilder:
+                (context, animation, secondaryAnimation, child) =>
+                    FadeTransition(opacity: animation, child: child),
+            opaque: false,
+          ),
         ),
       ],
     ),
     GoRoute(
       path: '/search',
-      pageBuilder: (context, state) =>
-          const NoTransitionPage(child: SearchRoute()),
+      builder: (context, state) => const SearchRoute(),
     ),
   ],
 );
