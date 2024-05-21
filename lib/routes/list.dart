@@ -9,8 +9,10 @@ class TemporarilyList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final padding = MediaQuery.paddingOf(context);
+
     return SingleChildScrollView(
-      padding: const EdgeInsets.all(10),
+      padding: EdgeInsets.only(bottom: padding.bottom),
       controller: scrollController,
       child: const Column(
         children: [
@@ -50,6 +52,7 @@ class _ListRouteState extends State<ListRoute> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
+      bottom: false,
       child: DefaultTabController(
         length: 6,
         initialIndex: 1,

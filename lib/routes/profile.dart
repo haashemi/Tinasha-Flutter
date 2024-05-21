@@ -70,7 +70,7 @@ class _ProfileRouteState extends State<ProfileRoute> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-        padding: EdgeInsets.only(top: MediaQuery.of(context).viewPadding.top),
+        padding: MediaQuery.paddingOf(context),
         child: Column(
           children: <Widget>[
             Padding(
