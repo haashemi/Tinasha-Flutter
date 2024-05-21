@@ -22,9 +22,7 @@ class _HomeRouteState extends State<HomeRoute> {
           children: <Widget>[
             const Text('Spring 2024'),
             OutlinedButton.icon(
-              onPressed: () async {
-                await context.push('/search');
-              },
+              onPressed: () async => context.push('/search'),
               label: const Text('Search'),
               icon: const Icon(Icons.search),
             ),

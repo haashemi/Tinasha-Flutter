@@ -22,7 +22,9 @@ class TinashaApp extends StatelessWidget {
           ),
           darkTheme: ThemeData(
             colorScheme: ColorScheme.fromSeed(
-                seedColor: Colors.blue, brightness: Brightness.dark,),
+              seedColor: Colors.blue,
+              brightness: Brightness.dark,
+            ),
           ),
           themeAnimationCurve: Curves.easeInOut,
           themeMode: themeMode,
