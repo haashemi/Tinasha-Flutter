@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';
 
 class AnimeList extends StatelessWidget {
@@ -17,29 +16,28 @@ class AnimeList extends StatelessWidget {
         child: SizedBox(
           height: 150,
           child: Row(
-            children: [
+            children: <Widget>[
               ClipRRect(
                 borderRadius: const BorderRadius.only(
                   topRight: Radius.circular(12),
                   bottomRight: Radius.circular(12),
                 ),
                 child: Image.network(
-                  "https://cdn.myanimelist.net/images/anime/1346/141203.jpg",
+                  'https://cdn.myanimelist.net/images/anime/1346/141203.jpg',
                   width: 100,
                   height: 150,
                   fit: BoxFit.cover,
                 ),
               ),
               Expanded(
-                flex: 1,
                 child: Padding(
                   padding: const EdgeInsets.fromLTRB(10, 20, 10, 10),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
+                    children: <Widget>[
                       const Text(
-                        "Maou no Ore ga Dorei Elf wo Yome ni Shitanda ga, Dou Medereba Ii?",
+                        'Maou no Ore ga Dorei Elf wo Yome ni Shitanda ga, Dou Medereba Ii?',
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
@@ -47,27 +45,27 @@ class AnimeList extends StatelessWidget {
                         ),
                       ),
                       Row(
-                        mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
+                        children: <Widget>[
                           const Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
+                            children: <Widget>[
                               Icon(Icons.star, size: 20),
                               Gap(5),
-                              Text("8.22")
+                              Text('8.22'),
                             ],
                           ),
                           const Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
+                            children: <Widget>[
                               Icon(Icons.play_circle_outlined, size: 20),
                               Gap(5),
-                              Text("5/12")
+                              Text(
+                                '5/12',
+                                style: TextStyle(fontSize: 17),
+                              ),
                             ],
                           ),
                           Row(
-                            children: [
+                            children: <Widget>[
                               IconButton.outlined(
                                 onPressed: () {},
                                 icon: const Icon(Icons.add),
@@ -78,13 +76,13 @@ class AnimeList extends StatelessWidget {
                                 icon: const Icon(Icons.edit_note),
                               ),
                             ],
-                          )
+                          ),
                         ],
-                      )
+                      ),
                     ],
                   ),
                 ),
-              )
+              ),
             ],
           ),
         ),
