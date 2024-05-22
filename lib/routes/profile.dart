@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
 import 'package:simple_icons/simple_icons.dart';
 import 'package:streaming_shared_preferences/streaming_shared_preferences.dart';
 import 'package:tinasha_v2/data/app_settings.dart';
@@ -173,7 +174,7 @@ class _ProfileRouteState extends State<ProfileRoute> {
                 color: Theme.of(context).colorScheme.error,
               ),
               subtitle: const Text('Logout from Tinasha.'),
-              onTap: () {},
+              onTap: () => context.push("/sign-in"),
             ),
             const AboutListTile(),
           ],

@@ -50,5 +50,9 @@ final GoRouter router = GoRouter(
       path: '/search',
       builder: (context, state) => const SearchRoute(),
     ),
+    GoRoute(
+      path: '/sign-in',
+      builder: (context, state) => const SignInRoute(),
+    ),
   ],
 );
