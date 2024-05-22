@@ -11,30 +11,16 @@ class TemporarilyList extends StatelessWidget {
   Widget build(BuildContext context) {
     final padding = MediaQuery.paddingOf(context);
 
-    return SingleChildScrollView(
-      padding: EdgeInsets.only(bottom: padding.bottom),
-      controller: scrollController,
-      child: const Column(
-        children: [
-          AnimeList(),
-          Gap(2),
-          AnimeList(),
-          Gap(2),
-          AnimeList(),
-          Gap(2),
-          AnimeList(),
-          Gap(2),
-          AnimeList(),
-          Gap(2),
-          AnimeList(),
-          Gap(2),
-          AnimeList(),
-          Gap(2),
-          AnimeList(),
-          Gap(2),
-          AnimeList(),
-        ],
+    return ListView.separated(
+      itemCount: 20,
+      padding: EdgeInsets.only(
+        bottom: padding.bottom + 10,
+        top: 10,
+        left: 10,
+        right: 10,
       ),
+      itemBuilder: (context, index) => const AnimeList(),
+      separatorBuilder: (context, index) => const Gap(2),
     );
   }
 }
