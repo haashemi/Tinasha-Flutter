@@ -149,8 +149,10 @@ class _ProfileRouteState extends State<ProfileRoute> {
                 subtitle: const Text(
                   'Show age restricted anime/manga',
                 ),
-                thumbIcon: WidgetStateProperty.resolveWith(
-                  (states) => states.contains(WidgetState.selected)
+                // ignore: deprecated_member_use
+                thumbIcon: MaterialStateProperty.resolveWith(
+                  // ignore: deprecated_member_use
+                  (states) => states.contains(MaterialState.selected)
                       ? const Icon(Icons.done_rounded)
                       : const Icon(Icons.close_rounded),
                 ),
