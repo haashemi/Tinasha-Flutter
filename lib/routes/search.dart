@@ -22,7 +22,10 @@ class _SearchRouteState extends State<SearchRoute> {
           padding: EdgeInsets.fromLTRB(10, topPadding + 5, 10, 0),
           child: SearchBar(
             autoFocus: true,
-            leading: BackButton(onPressed: () => context.pop()),
+            leading: BackButton(
+              onPressed: () =>
+                  context.canPop() ? context.pop() : context.go("/"),
+            ),
             hintText: 'Search...',
             trailing: <Widget>[
               IconButton(
