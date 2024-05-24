@@ -37,36 +37,39 @@ class _ListRouteState extends State<ListRoute> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      bottom: false,
-      child: DefaultTabController(
-        length: 6,
-        initialIndex: 1,
-        child: Scaffold(
-          appBar: const TabBar(
-            isScrollable: true,
-            enableFeedback: true,
-            padding: EdgeInsets.only(left: 20),
-            tabAlignment: TabAlignment.center,
-            tabs: <Widget>[
-              Tab(text: 'All'),
-              Tab(text: 'Watching'),
-              Tab(text: 'Completed'),
-              Tab(text: 'On Hold'),
-              Tab(text: 'Dropped'),
-              Tab(text: 'Plan to Watch'),
-            ],
+    return DefaultTabController(
+      length: 6,
+      initialIndex: 1,
+      child: Scaffold(
+        appBar: PreferredSize(
+          preferredSize: const Size.fromHeight(kToolbarHeight),
+          child: Padding(
+            padding: EdgeInsets.only(top: MediaQuery.of(context).padding.top),
+            child: const TabBar(
+              isScrollable: true,
+              enableFeedback: true,
+              padding: EdgeInsets.only(left: 20),
+              tabAlignment: TabAlignment.center,
+              tabs: <Widget>[
+                Tab(text: 'All'),
+                Tab(text: 'Watching'),
+                Tab(text: 'Completed'),
+                Tab(text: 'On Hold'),
+                Tab(text: 'Dropped'),
+                Tab(text: 'Plan to Watch'),
+              ],
+            ),
           ),
-          body: TabBarView(
-            children: <Widget>[
-              TemporarilyList(watchingScrollController),
-              TemporarilyList(watchingScrollController),
-              TemporarilyList(watchingScrollController),
-              TemporarilyList(watchingScrollController),
-              TemporarilyList(watchingScrollController),
-              TemporarilyList(watchingScrollController),
-            ],
-          ),
+        ),
+        body: TabBarView(
+          children: <Widget>[
+            TemporarilyList(watchingScrollController),
+            TemporarilyList(watchingScrollController),
+            TemporarilyList(watchingScrollController),
+            TemporarilyList(watchingScrollController),
+            TemporarilyList(watchingScrollController),
+            TemporarilyList(watchingScrollController),
+          ],
         ),
       ),
     );
