@@ -1,11 +1,9 @@
-import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:tinasha_v2/routes/routes.dart';
 import 'package:tinasha_v2/widgets/home_shell.dart';
 
 final GoRouter router = GoRouter(
   initialLocation: '/',
-  overridePlatformDefaultLocation: true,
   debugLogDiagnostics: true,
   routes: <RouteBase>[
     ShellRoute(
@@ -13,36 +11,15 @@ final GoRouter router = GoRouter(
       routes: <RouteBase>[
         GoRoute(
           path: '/',
-          pageBuilder: (context, state) => CustomTransitionPage(
-            key: state.pageKey,
-            child: const HomeRoute(),
-            transitionsBuilder:
-                (context, animation, secondaryAnimation, child) =>
-                    FadeTransition(opacity: animation, child: child),
-            opaque: false,
-          ),
+          builder: (context, state) => const HomeRoute(),
         ),
         GoRoute(
           path: '/list',
-          pageBuilder: (context, state) => CustomTransitionPage(
-            key: state.pageKey,
-            child: const ListRoute(),
-            transitionsBuilder:
-                (context, animation, secondaryAnimation, child) =>
-                    FadeTransition(opacity: animation, child: child),
-            opaque: false,
-          ),
+          builder: (context, state) => const ListRoute(),
         ),
         GoRoute(
           path: '/profile',
-          pageBuilder: (context, state) => CustomTransitionPage(
-            key: state.pageKey,
-            child: const ProfileRoute(),
-            transitionsBuilder:
-                (context, animation, secondaryAnimation, child) =>
-                    FadeTransition(opacity: animation, child: child),
-            opaque: false,
-          ),
+          builder: (context, state) => const ProfileRoute(),
         ),
       ],
     ),
