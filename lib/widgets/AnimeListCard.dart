@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class AnimeList extends StatelessWidget {
-  const AnimeList({super.key});
+class AnimeListCard extends StatelessWidget {
+  const AnimeListCard({super.key});
 
   void onAdd() {}
   void onEdit() {}

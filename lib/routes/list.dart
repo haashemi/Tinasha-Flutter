@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:tinasha_v2/widgets/anime_list.dart';
+import 'package:tinasha_v2/widgets/AnimeListCard.dart';
 
 class TemporarilyList extends StatelessWidget {
   const TemporarilyList(this.scrollController, {super.key});
@@ -19,7 +19,7 @@ class TemporarilyList extends StatelessWidget {
         left: 10,
         right: 10,
       ),
-      itemBuilder: (context, index) => const AnimeList(),
+      itemBuilder: (context, index) => const AnimeListCard(),
       separatorBuilder: (context, index) => const Gap(2),
     );
   }
