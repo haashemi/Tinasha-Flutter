@@ -29,6 +29,7 @@ class _ProfileRouteState extends State<ProfileRoute> {
           title: const Text('Select assignment'),
           children: <Widget>[
             RadioListTile<ThemeMode>(
+              enableFeedback: true,
               value: ThemeMode.light,
               groupValue: current,
               onChanged: (iv) {
@@ -37,6 +38,7 @@ class _ProfileRouteState extends State<ProfileRoute> {
               title: const Text('Light'),
             ),
             RadioListTile<ThemeMode>(
+              enableFeedback: true,
               value: ThemeMode.dark,
               groupValue: current,
               onChanged: (iv) {
@@ -45,6 +47,7 @@ class _ProfileRouteState extends State<ProfileRoute> {
               title: const Text('Dark'),
             ),
             RadioListTile<ThemeMode>(
+              enableFeedback: true,
               value: ThemeMode.system,
               groupValue: current,
               onChanged: (iv) {
@@ -144,6 +147,7 @@ class _ProfileRouteState extends State<ProfileRoute> {
             PreferenceBuilder<bool>(
               preference: settings.nsfw,
               builder: (context, value) => SwitchListTile.adaptive(
+                enableFeedback: true,
                 title: const Text('Show NSFW content'),
                 secondary: const Icon(Icons.no_adult_content_rounded),
                 subtitle: const Text(
