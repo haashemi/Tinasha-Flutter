@@ -1,3 +1,3 @@
-# Tinasha (V2)
+# Tinasha-Flutter
 
-An attempt to rewrite [Tinasha](https://github.com/haashemi/Tinasha) in Flutter
+An attempt to rewrite [Tinasha](https://github.com/haashemi/Tinasha) in Flutter. (but failed)
